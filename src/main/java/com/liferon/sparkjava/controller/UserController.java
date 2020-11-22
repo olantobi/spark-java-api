@@ -4,20 +4,16 @@ import com.liferon.sparkjava.dto.ApiResponse;
 import com.liferon.sparkjava.dto.StatusResponse;
 import com.liferon.sparkjava.dto.User;
 import com.liferon.sparkjava.service.UserService;
-import com.liferon.sparkjava.service.UserServiceMapImpl;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Collection;
 
 import static spark.Spark.*;
 
+@RequiredArgsConstructor
 public class UserController extends BaseController {
 
     private final UserService userService;
-
-    public UserController() {
-        super();
-        userService = new UserServiceMapImpl();
-    }
 
     public void routes() {
         post("/users", (req, resp) -> {

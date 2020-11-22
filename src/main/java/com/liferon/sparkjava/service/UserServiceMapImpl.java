@@ -14,6 +14,7 @@ public class UserServiceMapImpl implements UserService {
     public UserServiceMapImpl() {
         userMap = new ConcurrentHashMap<>();
     }
+
     @Override
     public User addUser(User user) {
         String id = UUID.randomUUID().toString();
